@@ -3,64 +3,61 @@ PC-6001mkII用の自作データーレコーダーです。ピーガー音の再
 
 モードは3つあります。
 
-・PLAYモード : PLAYボタンで再生します。STOPボタンで再生の中断が可能です。
+・PLAYモード : PLAYボタンで再生します。STOPボタンで再生の中断が可能です。SDカードの最上位ディレクトリにバイナリファイル(CAS/P6)を入れておきます。
 
 ・REMOTE PLAYモード : PC-6001mkIIのリモート端子がオンになると、再生を開始します。再生中にリモート端子がオフになると一時停止です。STOPボタンで再生の中断が可能です。
 
 ・RECモード : UP/DWボタンでファイル番号（0～65535の範囲）で選択します。PLAYボタンを押すと録音開始です。STOPボタンで録音を終了します。録音したファイル名は「SAV00000～65535.CAS」になります。
 
-
 ## Parts
 
- U1)	 ATmega328P
+(U1)	 ATmega328P
 
- U2)	 USBシリアルモジュール	  http://akizukidenshi.com/catalog/g/gM-11007/
+(U2)	 USBシリアルモジュール	  http://akizukidenshi.com/catalog/g/gM-11007/
  
- U3)	 SDカードソケット
+(U3)	 SDカードソケット
  
- U4)	 液晶モジュールAE-AQM1602A	  http://akizukidenshi.com/catalog/g/gK-08896/
+(U4)	 液晶モジュールAE-AQM1602A	  http://akizukidenshi.com/catalog/g/gK-08896/
  
- U5)	 オーディオアンプ NJM2073D	  http://akizukidenshi.com/catalog/g/gI-03593/
+(U5)	 オーディオアンプ NJM2073D	  http://akizukidenshi.com/catalog/g/gI-03593/
  
- U6)	 オペアンプLM358N	  http://akizukidenshi.com/catalog/g/gI-11167/
+(U6)	 オペアンプLM358N	  http://akizukidenshi.com/catalog/g/gI-11167/
  
- U7)	 3.3V 三端子レギュレータ（低損失）	  http://akizukidenshi.com/catalog/g/gI-03705/
+(U7)	 3.3V 三端子レギュレータ（低損失）	  http://akizukidenshi.com/catalog/g/gI-03705/
  
- CN1/2)	 3.5mmステレオジャック	  http://akizukidenshi.com/catalog/g/gK-05363/
+(CN1/2)	 3.5mmステレオジャック	  http://akizukidenshi.com/catalog/g/gK-05363/
  
- CN3)	 2.5mmジャック
+(CN3)	 2.5mmジャック
  
- CN4)	 マイクロUSBコネクタ
+(CN4)	 マイクロUSBコネクタ
  
- SP1)	 圧電スピーカ
+(SP1)	 圧電スピーカ
  
- SW1/2/3/4) タクトスイッチ
+(SW1/2/3/4) タクトスイッチ
 
- SW5 スイッチ
+(SW5) スライドスイッチ
  
- R1/2/3/4/5)	 1.5k ohm抵抗
+(R1/2/3/4/5)	 1.5k ohm抵抗
  
- R6/7/8)	 3.3k ohm抵抗	 
+(R6/7/8)	 3.3k ohm抵抗	 
  
- R9/10/11)	 10k ohm抵抗	 
+(R9/10/11)	 10k ohm抵抗	 
  
- VR1)	 10k ohm可変抵抗
+(VR1)	 10k ohm可変抵抗
  
- C1)	 10μF 電解コンデンサ	 
+(C1)	 10μF 電解コンデンサ	 
  
- C2)	 220μF 電解コンデンサ	 
+(C2)	 220μF 電解コンデンサ	 
  
- C3)	 100μF 電解コンデンサ	 
+(C3)	 100μF 電解コンデンサ	 
  
- C4)	 0.1μF	 
+(C4)	 0.1μF	 
  
- X1)	 16MHz　水晶発振子+22pFコンデンサ
-
-ユニバーサル基板
+(X1)	 16MHz　水晶発振子+22pFコンデンサ
 
 ## 分割ロードへの対応
 
-分割ロードする場合には、バイナリファイルを1つにまとめて、データとデータの間に「0」を入れてください。たとえば、TINY XEVIOUSの場合、実際のテープは次のような構成になっています。
+分割ロードする場合には、バイナリファイルを1つにまとめて、データとデータの間に「0」を数バイト入れてください。たとえば、TINY XEVIOUSの場合、実際のテープは次のような構成になっています。
 
 ・ピー音
 
